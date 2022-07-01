@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W4 FINAL PROJECT</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+          //Reference the DropDownList.
+          var ddlYears = document.getElementById("ddlYears");
+   
+          //Determine the Current Year.
+          var currentYear = (new Date()).getFullYear();
+   
+          //Loop and add the Year values to DropDownList.
+          for (var i = 1950; i <= currentYear; i++) {
+              var option = document.createElement("OPTION");
+              option.innerHTML = i;
+              option.value = i;
+              ddlYears.appendChild(option);
+          }
+      };
+  </script>
+    
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="nav__wrapper">
+        <div class="logo__container">
+          <img class="logo__img" src="assets/logo-eye-film.png" alt="">
+          <span class="logo__title" >CINEM</span>
+        </div>
+        <div class="nav__links--wrapper">
+          <ul class="nav__links">
+            <a class="nav__link" href="">Home</a>
+            <a class="nav__link"href="">TV Shows</a>
+            <a class="nav__link" href="">Movies</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav> 
+
+  <section id="banner">
+    <div class="container">
+      <div class="row">
+        <div class="banner__search--wrapper">
+          <input class="banner__search--field" placeholder="Give it a shot !" type="text" onchange="onSearchChange(event)"></input>
+          <button class="banner__search--btn click">Search</button>
+        </div>
+        <div class="banner__search-filter container">
+          <div class="banner__search--result">
+          </div>
+          <div class="banner__filter">
+            <select id="ddlYears" onchange="selectYear(event)"></select>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- MEDIA -->
+
+  <section id="media">
+    <div class="container ">
+      <div class="row">
+        <ul class="media__list">
+          <li class="media">
+            <div class="media__wrapper">
+              <img class="media__img" src="https://m.media-amazon.com/images/M/MV5BM2FiM2YzMGMtNzhhZS00N2E3LWI3MDEtNzAxODIxNWY5ZTkzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg" alt="">
+              <div class="media__description">
+                <h3 class="media__description--title">Eklavya: The Royal Guard</h3>
+                <span class="media__description--type">movie</span>
+                <span class="media__description--year">2007</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+    
+  </section>
+</body>
+
+<footer id="footer">
+<div class="container">
+  <div class="row">
+    <div class="logo__container--footer">
+      <img class="logo__img--footer" src="assets/logo-eye-film.png" alt="">
+  </div>
+</div>
+</footer>
+</html>
